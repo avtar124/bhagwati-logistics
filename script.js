@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // SMOOTH SCROLLING
     initializeSmoothScrolling();
     
+    // MOBILE MENU FUNCTIONALITY
+    initializeMobileMenu();
+    
     console.log('✅ All JavaScript modules loaded successfully');
 });
 
@@ -179,7 +182,7 @@ function sendViaEmailJS(data, submitBtn, originalBtnText, form) {
     console.log('📧 Sending email with template params:', templateParams);
     
     // Replace these with your actual EmailJS service and template IDs
-    emailjs.send('service_9num3id', 'template_hi56aao', templateParams)
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
         .then(function(response) {
             console.log('✅ EmailJS SUCCESS:', response.status, response.text);
             alert('🎉 Thank you! Your quote request has been sent successfully. We will contact you within 24 hours.');
@@ -235,7 +238,7 @@ Sent from: Bhagwati Logistics Website
 Date: ${new Date().toLocaleString('en-IN')}
     `.trim());
     
-    const mailtoLink = `mailto:avtardy08@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    const mailtoLink = `mailto:bhagwatilogistics02@gmail.com?subject=${emailSubject}&body=${emailBody}`;
     
     // Open email client
     window.open(mailtoLink, '_blank');
