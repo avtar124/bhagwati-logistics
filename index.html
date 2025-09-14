@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Bhagwati Logistics</title>
+    <title>Bhagwati Logistics - Home</title>
     <link rel="stylesheet" href="styles.css">
     <!-- EmailJS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -28,12 +28,12 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="clients.html">Clients</a></li>
-                        <li><a href="contact.html" class="active">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
                 <a href="contact.html" class="get-quote-btn">Get Quote</a>
@@ -41,211 +41,102 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in touch for your logistics needs - we're here to help 24/7</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p>Ready to discuss your logistics requirements? Contact us through any of the methods below, and our team will respond promptly to assist you.</p>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <div class="contact-details">
-                        <h4>Phone Numbers</h4>
-                        <p>9969741336</p>
-                        <p>8850117014</p>
-                        <small>Available 24/7 for emergency shipments</small>
-                    </div>
+            <div class="hero-content">
+                <div class="trusted-badge">Trusted Logistics Partner</div>
+                <h2>
+                    <span class="blue">Your Logistics,</span><br>
+                    <span class="orange">Our Priority</span>
+                </h2>
+                <p>From transportation to warehousing, we provide end-to-end logistics solutions that keep your business moving forward. Fast, reliable, and secure.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Get Free Quote →</a>
+                    <a href="services.html" class="btn-secondary">Explore Services</a>
                 </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-details">
-                        <h4>Email Address</h4>
-                        <p>bhagwatilogistics02@gmail.com</p>
-                        <small>We respond within 2 hours during business hours</small>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h4>Service Area</h4>
-                        <p>Mumbai & Maharashtra</p>
-                        <small>Expanding to other states - contact us for details</small>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">⏰</div>
-                    <div class="contact-details">
-                        <h4>Business Hours</h4>
-                        <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                        <p>Sunday: 10:00 AM - 5:00 PM</p>
-                        <small>Emergency services available 24/7</small>
-                    </div>
+                <div class="hero-features">
+                    <div class="hero-feature">Live tracking available</div>
+                    <div class="hero-feature">24/7 customer support</div>
                 </div>
             </div>
-
-            <!-- Quote Form -->
-            <div class="quote-form">
-                <h3>📋 Get Quick Quote</h3>
-                <p>Fill out the form below and we'll get back to you with a competitive quote within 24 hours.</p>
-                
-                <!-- IMPORTANT: Form ID must be exactly "contact-form" -->
-                <form id="contact-form" method="post">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" placeholder="Your company name">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="your@email.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="service">Service Required</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="transportation">Transportation</option>
-                                <option value="warehousing">Warehousing</option>
-                                <option value="supply-chain">Supply Chain Management</option>
-                                <option value="express">Express Delivery</option>
-                                <option value="refrigerated">Cold Chain Logistics</option>
-                                <option value="industrial">Industrial Solutions</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="urgency">Urgency Level</label>
-                            <select id="urgency" name="urgency">
-                                <option value="">Select urgency</option>
-                                <option value="immediate">Immediate (Same day)</option>
-                                <option value="urgent">Urgent (Within 2-3 days)</option>
-                                <option value="standard">Standard (Within a week)</option>
-                                <option value="flexible">Flexible timeline</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="pickup">Pickup Location</label>
-                            <input type="text" id="pickup" name="pickup" placeholder="Pickup address or area">
-                        </div>
-                        <div class="form-group">
-                            <label for="delivery">Delivery Location</label>
-                            <input type="text" id="delivery" name="delivery" placeholder="Delivery address or area">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="cargo-details">Cargo Details</label>
-                        <textarea id="cargo-details" name="cargo-details" placeholder="Please describe your cargo: type, weight, dimensions, quantity, any special handling requirements..."></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Additional Message</label>
-                        <textarea id="message" name="message" placeholder="Any additional information or specific requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Quote Request</button>
-                </form>
+            <div class="hero-image">
+                <img src="images/hero-truck.jpg" alt="Professional Logistics Services" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzNiODJmNiIvPjx0ZXh0IHg9IjIwMCIgeT0iMTUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IndoaXRlIj7wn5qbIFByb2Zlc3Npb25hbCBMb2dpc3RpY3MgU2VydmljZXM8L3RleHQ+PC9zdmc+'">
             </div>
         </div>
     </section>
 
-    <!-- Quick Contact Options -->
-    <section class="quick-contact">
+    <!-- Quick Services Overview -->
+    <section class="quick-services">
         <div class="container">
             <div class="section-header">
-                <h2>Need Immediate Assistance?</h2>
-                <p>Choose the quickest way to reach us for urgent requirements</p>
+                <h2>Our Services</h2>
+                <p>Professional logistics solutions for all your business needs</p>
             </div>
-            
-            <div class="quick-contact-grid">
-                <div class="quick-contact-card">
-                    <div class="quick-icon">📞</div>
-                    <h3>Call Now</h3>
-                    <p>Speak directly with our logistics experts</p>
-                    <a href="tel:9969741336" class="quick-btn">9969741336</a>
+            <div class="quick-services-grid">
+                <div class="quick-service-card">
+                    <div class="service-icon">🚛</div>
+                    <h3>Transportation</h3>
+                    <p>Full truckload and part load transportation across India with real-time tracking.</p>
+                    <a href="services.html" class="service-link">Learn More →</a>
                 </div>
-                
-                <div class="quick-contact-card">
-                    <div class="quick-icon">💬</div>
-                    <h3>WhatsApp</h3>
-                    <p>Quick quotes and instant responses</p>
-                    <a href="https://wa.me/8850117014" class="quick-btn" target="_blank">Chat on WhatsApp</a>
+                <div class="quick-service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Warehousing</h3>
+                    <p>Secure, climate-controlled storage facilities with advanced inventory management.</p>
+                    <a href="services.html" class="service-link">Learn More →</a>
                 </div>
-                
-                <div class="quick-contact-card">
-                    <div class="quick-icon">📧</div>
-                    <h3>Email Us</h3>
-                    <p>Detailed inquiries and documentation</p>
-                    <a href="mailto:avtardy08@gmail.com" class="quick-btn">Send Email</a>
+                <div class="quick-service-card">
+                    <div class="service-icon">🔗</div>
+                    <h3>Supply Chain</h3>
+                    <p>End-to-end supply chain optimization to streamline your operations.</p>
+                    <a href="services.html" class="service-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
         <div class="container">
             <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Quick answers to common logistics questions</p>
+                <h2>Why Choose Bhagwati Logistics?</h2>
+                <p>Over 15 years of reliable service and customer satisfaction</p>
             </div>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>How quickly can you provide a quote?</h3>
-                    <p>We typically provide quotes within 2-4 hours during business hours. For urgent requirements, call us directly for immediate assistance.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast & Reliable</h3>
+                    <p>On-time delivery with real-time tracking for complete peace of mind.</p>
                 </div>
-                
-                <div class="faq-item">
-                    <h3>Do you provide GPS tracking?</h3>
-                    <p>Yes, all our vehicles are equipped with GPS tracking. You'll receive real-time updates on your shipment's location and status.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure Transportation</h3>
+                    <p>Your cargo is safe with our experienced drivers and secure vehicles.</p>
                 </div>
-                
-                <div class="faq-item">
-                    <h3>What areas do you serve?</h3>
-                    <p>We primarily serve Mumbai and Maharashtra, with expansion to other states. Contact us to check if we cover your specific route.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your logistics needs.</p>
                 </div>
-                
-                <div class="faq-item">
-                    <h3>Do you handle emergency deliveries?</h3>
-                    <p>Yes, we provide 24/7 emergency logistics services. Call our emergency hotline for same-day and urgent deliveries.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>Best rates in the market without compromising on service quality.</p>
                 </div>
-                
-                <div class="faq-item">
-                    <h3>What types of cargo do you transport?</h3>
-                    <p>We handle general cargo, heavy machinery, perishables, pharmaceuticals, and specialized goods with appropriate vehicles.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>Is my cargo insured during transport?</h3>
-                    <p>Yes, we provide cargo insurance options. Transit insurance details will be included in your quote and service agreement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-home">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Ship with Us?</h2>
+                <p>Get a free quote today and experience the difference of professional logistics services.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-cta-primary">Get Free Quote</a>
+                    <a href="about.html" class="btn-cta-secondary">Learn About Us</a>
                 </div>
             </div>
         </div>
