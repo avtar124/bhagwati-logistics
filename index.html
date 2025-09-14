@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bhagwati Logistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- EmailJS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div>📞 Tel: 9969741336/8850117014 | 📧 bhagwatilogistics02@gmail.com</div>
+                <div>📍 Mumbai & Maharashtra</div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <div class="logo-icon">🚛</div>
+                    <div class="logo-text">
+                        <h1>BHAGWATI LOGISTICS</h1>
+                        <p>Transportation & Warehousing</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="contact.html" class="get-quote-btn">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch for your logistics needs - we're here to help 24/7</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Ready to discuss your logistics requirements? Contact us through any of the methods below, and our team will respond promptly to assist you.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>Phone Numbers</h4>
+                        <p>9969741336</p>
+                        <p>8850117014</p>
+                        <small>Available 24/7 for emergency shipments</small>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h4>Email Address</h4>
+                        <p>bhagwatilogistics02@gmail.com</p>
+                        <small>We respond within 2 hours during business hours</small>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Service Area</h4>
+                        <p>Mumbai & Maharashtra</p>
+                        <small>Expanding to other states - contact us for details</small>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-details">
+                        <h4>Business Hours</h4>
+                        <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                        <p>Sunday: 10:00 AM - 5:00 PM</p>
+                        <small>Emergency services available 24/7</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quote Form -->
+            <div class="quote-form">
+                <h3>📋 Get Quick Quote</h3>
+                <p>Fill out the form below and we'll get back to you with a competitive quote within 24 hours.</p>
+                
+                <!-- IMPORTANT: Form ID must be exactly "contact-form" -->
+                <form id="contact-form" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXX XXXXX">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="warehousing">Warehousing</option>
+                                <option value="supply-chain">Supply Chain Management</option>
+                                <option value="express">Express Delivery</option>
+                                <option value="refrigerated">Cold Chain Logistics</option>
+                                <option value="industrial">Industrial Solutions</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="">Select urgency</option>
+                                <option value="immediate">Immediate (Same day)</option>
+                                <option value="urgent">Urgent (Within 2-3 days)</option>
+                                <option value="standard">Standard (Within a week)</option>
+                                <option value="flexible">Flexible timeline</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup">Pickup Location</label>
+                            <input type="text" id="pickup" name="pickup" placeholder="Pickup address or area">
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery">Delivery Location</label>
+                            <input type="text" id="delivery" name="delivery" placeholder="Delivery address or area">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cargo-details">Cargo Details</label>
+                        <textarea id="cargo-details" name="cargo-details" placeholder="Please describe your cargo: type, weight, dimensions, quantity, any special handling requirements..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Additional Message</label>
+                        <textarea id="message" name="message" placeholder="Any additional information or specific requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Quote Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Options -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Need Immediate Assistance?</h2>
+                <p>Choose the quickest way to reach us for urgent requirements</p>
+            </div>
+            
+            <div class="quick-contact-grid">
+                <div class="quick-contact-card">
+                    <div class="quick-icon">📞</div>
+                    <h3>Call Now</h3>
+                    <p>Speak directly with our logistics experts</p>
+                    <a href="tel:9969741336" class="quick-btn">9969741336</a>
+                </div>
+                
+                <div class="quick-contact-card">
+                    <div class="quick-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Quick quotes and instant responses</p>
+                    <a href="https://wa.me/8850117014" class="quick-btn" target="_blank">Chat on WhatsApp</a>
+                </div>
+                
+                <div class="quick-contact-card">
+                    <div class="quick-icon">📧</div>
+                    <h3>Email Us</h3>
+                    <p>Detailed inquiries and documentation</p>
+                    <a href="mailto:avtardy08@gmail.com" class="quick-btn">Send Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common logistics questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How quickly can you provide a quote?</h3>
+                    <p>We typically provide quotes within 2-4 hours during business hours. For urgent requirements, call us directly for immediate assistance.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you provide GPS tracking?</h3>
+                    <p>Yes, all our vehicles are equipped with GPS tracking. You'll receive real-time updates on your shipment's location and status.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What areas do you serve?</h3>
+                    <p>We primarily serve Mumbai and Maharashtra, with expansion to other states. Contact us to check if we cover your specific route.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you handle emergency deliveries?</h3>
+                    <p>Yes, we provide 24/7 emergency logistics services. Call our emergency hotline for same-day and urgent deliveries.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What types of cargo do you transport?</h3>
+                    <p>We handle general cargo, heavy machinery, perishables, pharmaceuticals, and specialized goods with appropriate vehicles.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is my cargo insured during transport?</h3>
+                    <p>Yes, we provide cargo insurance options. Transit insurance details will be included in your quote and service agreement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bhagwati Logistics</h3>
+                    <p>Your trusted partner for transportation and warehousing solutions across India. Over 15 years of reliable service.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="LinkedIn">💼</a>
+                        <a href="#" title="Instagram">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Transportation</a></li>
+                        <li><a href="services.html">Warehousing</a></li>
+                        <li><a href="services.html">Supply Chain</a></li>
+                        <li><a href="contact.html">Get Quote</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="clients.html">Our Clients</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>📞 9969741336</li>
+                        <li>📞 8850117014</li>
+                        <li>📧 bhagwatilogistics02@gmail.com</li>
+                        <li>📍 Mumbai & Maharashtra</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bhagwati Logistics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
