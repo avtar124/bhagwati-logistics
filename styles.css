@@ -2644,10 +2644,11 @@ html {
 }
 
 /* Mobile Responsive Styles */
+/* Mobile Menu Fix - Add to end of your existing CSS */
 @media (max-width: 768px) {
     /* Mobile Menu Button */
     .mobile-menu-btn {
-        display: block;
+        display: block !important;
         background: none;
         border: none;
         font-size: 24px;
@@ -2660,33 +2661,16 @@ html {
         transform: translateY(-50%);
     }
 
-    .mobile-menu-btn:hover {
-        color: #14b8a6;
-    }
-
-    /* Header adjustments for mobile */
-    .header-main .container {
-        position: relative;
-    }
-
-    /* Navigation Menu for Mobile */
-    nav {
-        width: 100%;
-        order: 3;
-    }
-
+    /* Make nav menu work on mobile */
     nav ul {
         display: none !important;
-        flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
         background: white;
+        flex-direction: column;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        border-radius: 0 0 8px 8px;
-        margin: 0;
-        padding: 10px 0;
         z-index: 999;
     }
 
@@ -2694,29 +2678,15 @@ html {
         display: flex !important;
     }
 
-    nav ul li {
-        margin: 0;
+    nav ul li a {
+        padding: 15px 20px;
         border-bottom: 1px solid #f1f5f9;
     }
+}
 
-    nav ul li:last-child {
-        border-bottom: none;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 15px 20px;
-        color: #1f2937;
-        text-decoration: none;
-        border-bottom: none !important;
-        transition: all 0.3s ease;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-        background: #f8fafc;
-        color: #14b8a6;
-        border-bottom: none !important;
-    }
+/* Hide mobile button on desktop */
+.mobile-menu-btn {
+    display: none;
 }
 /* END OF COMPLETE CSS FILE */
+
