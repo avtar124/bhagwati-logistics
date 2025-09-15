@@ -272,7 +272,20 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+   <script>
+function toggleMobileMenu() {
+    const menu = document.querySelector('nav ul');
+    const btn = document.querySelector('.mobile-menu-btn');
+    
+    if (menu.classList.contains('mobile-active')) {
+        menu.classList.remove('mobile-active');
+        btn.innerHTML = '☰';
+    } else {
+        menu.classList.add('mobile-active');
+        btn.innerHTML = '✕';
+    }
+}
+</script>
+<script src="script.js"></script>
 </body>
-
 </html>
