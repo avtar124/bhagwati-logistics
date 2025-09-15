@@ -285,18 +285,36 @@ function initializeSmoothScrolling() {
 }
 
 // MOBILE MENU TOGGLE (if you add mobile menu later)
-function initializeMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('nav ul');
+<script>
+function toggleMobileMenu() {
+    const menu = document.querySelector('nav ul');
+    const btn = document.querySelector('.mobile-menu-btn');
     
-    if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('mobile-active');
-            console.log('📱 Mobile menu toggled');
-        });
+    if (menu && btn) {
+        if (menu.classList.contains('mobile-active')) {
+            menu.classList.remove('mobile-active');
+            btn.innerHTML = '☰';
+        } else {
+            menu.classList.add('mobile-active');
+            btn.innerHTML = '✕';
+        }
     }
 }
 
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const menu = document.querySelector('nav ul');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    
+    if (menu && btn && nav && !nav.contains(event.target) && !btn.contains(event.target)) {
+        if (menu.classList.contains('mobile-active')) {
+            menu.classList.remove('mobile-active');
+            btn.innerHTML = '☰';
+        }
+    }
+});
+</script>
 // UTILITY FUNCTIONS
 function showNotification(message, type = 'success') {
     // Create notification element
@@ -368,3 +386,4 @@ window.debugForm = debugForm;
 
 console.log('🎉 Bhagwati Logistics JavaScript fully loaded!');
 console.log('💡 Use debugGallery() or debugForm() in console to troubleshoot');
+
