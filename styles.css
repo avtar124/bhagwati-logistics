@@ -2636,14 +2636,8 @@ html {
         background-position: -200% 0;
     }
 }
-/* Mobile Menu CSS - Add this to the end of your existing styles.css */
 
-/* Mobile Menu Button - Hidden on Desktop */
-.mobile-menu-btn {
-    display: none;
-}
-
-/* Mobile Responsive Styles */
+/* END OF COMPLETE CSS FILE */
 /* Mobile Menu Fix - Add to end of your existing CSS */
 @media (max-width: 768px) {
     /* Mobile Menu Button */
@@ -2688,5 +2682,3 @@ html {
 .mobile-menu-btn {
     display: none;
 }
-/* END OF COMPLETE CSS FILE */
-
