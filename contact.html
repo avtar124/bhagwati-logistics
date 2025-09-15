@@ -303,20 +303,36 @@
             </div>
         </div>
     </footer>
- <script>
+<script>
 function toggleMobileMenu() {
     const menu = document.querySelector('nav ul');
     const btn = document.querySelector('.mobile-menu-btn');
     
-    if (menu.classList.contains('mobile-active')) {
-        menu.classList.remove('mobile-active');
-        btn.innerHTML = '☰';
-    } else {
-        menu.classList.add('mobile-active');
-        btn.innerHTML = '✕';
+    if (menu && btn) {
+        if (menu.classList.contains('mobile-active')) {
+            menu.classList.remove('mobile-active');
+            btn.innerHTML = '☰';
+        } else {
+            menu.classList.add('mobile-active');
+            btn.innerHTML = '✕';
+        }
     }
 }
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const menu = document.querySelector('nav ul');
+    const btn = document.querySelector('.mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    
+    if (menu && btn && nav && !nav.contains(event.target) && !btn.contains(event.target)) {
+        if (menu.classList.contains('mobile-active')) {
+            menu.classList.remove('mobile-active');
+            btn.innerHTML = '☰';
+        }
+    }
+});
 </script>
-<script src="script.js"></script>
 </body>
 </html>
+
