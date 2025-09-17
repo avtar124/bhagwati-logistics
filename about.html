@@ -8,37 +8,63 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="header-top">
-            <div class="container">
-                <div>📞 Tel: 9969741336/8850117014 | 📧 bhagwatilogistics02@gmail.com</div>
-                <div>📍 Mumbai & Maharashtra</div>
-            </div>
+    <!-- Replace your existing header section with this HTML -->
+<header>
+    <div class="header-top">
+        <div class="container">
+            <div>📞 Tel: 9969741336/8850117014 | 📧 bhagwatilogistics02@gmail.com</div>
+            <div>📍 Mumbai & Maharashtra</div>
         </div>
-        <div class="header-main">
-            <div class="container">
-                <div class="logo">
-                    <div class="logo-icon">🚛</div>
-                    <div class="logo-text">
-                        <h1>BHAGWATI LOGISTICS</h1>
-                        <p>Transportation & Warehousing</p>
+    </div>
+    <div class="header-main">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">🚛</div>
+                <div class="logo-text">
+                    <h1>BHAGWATI LOGISTICS</h1>
+                    <p>Transportation & Warehousing</p>
+                </div>
+            </div>
+            
+            <!-- Swipeable Navigation Container -->
+            <div class="nav-swipe-container">
+                <!-- Navigation Arrows -->
+                <div class="nav-arrow prev" id="prevBtn">‹</div>
+                <div class="nav-arrow next" id="nextBtn">›</div>
+                
+                <!-- Navigation Track -->
+                <div class="nav-track" id="navTrack">
+                    <!-- Slide 1: Main Pages -->
+                    <div class="nav-slide">
+                        <ul>
+                            <li><a href="index.html" class="nav-link active">Home</a></li>
+                            <li><a href="about.html" class="nav-link">About</a></li>
+                            <li><a href="services.html" class="nav-link">Services</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Slide 2: Portfolio & Contact -->
+                    <div class="nav-slide">
+                        <ul>
+                            <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                            <li><a href="clients.html" class="nav-link">Clients</a></li>
+                            <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        </ul>
                     </div>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="clients.html">Clients</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
-                <a href="contact.html" class="get-quote-btn">Get Quote</a>
+                
+                <!-- Navigation Indicators -->
+                <div class="nav-indicators">
+                    <div class="indicator active" data-slide="0"></div>
+                    <div class="indicator" data-slide="1"></div>
+                </div>
             </div>
+            
+            <a href="contact.html" class="get-quote-btn">Get Quote</a>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <!-- Page Header -->
     <section class="page-header">
@@ -352,36 +378,7 @@
             </div>
         </div>
     </footer>
- <script>
-function toggleMobileMenu() {
-    const menu = document.querySelector('nav ul');
-    const btn = document.querySelector('.mobile-menu-btn');
-    
-    if (menu && btn) {
-        if (menu.classList.contains('mobile-active')) {
-            menu.classList.remove('mobile-active');
-            btn.innerHTML = '☰';
-        } else {
-            menu.classList.add('mobile-active');
-            btn.innerHTML = '✕';
-        }
-    }
-}
 
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-    const menu = document.querySelector('nav ul');
-    const btn = document.querySelector('.mobile-menu-btn');
-    const nav = document.querySelector('nav');
-    
-    if (menu && btn && nav && !nav.contains(event.target) && !btn.contains(event.target)) {
-        if (menu.classList.contains('mobile-active')) {
-            menu.classList.remove('mobile-active');
-            btn.innerHTML = '☰';
-        }
-    }
-});
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
-
