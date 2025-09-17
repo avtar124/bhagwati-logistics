@@ -1,6 +1,203 @@
 // Bhagwati Logistics - Complete JavaScript - REBUILT FROM SCRATCH
 console.log('🚛 Bhagwati Logistics JavaScript Loading...');
 
+// ADD this JavaScript to your existing script.js file
+
+// Swipeable Header Navigation Class
+class SwipeableHeader {
+    constructor() {
+        this.navTrack = document.getElementById('navTrack');
+        this.indicators = document.querySelectorAll('.indicator');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        
+        this.currentSlide = 0;
+        this.totalSlides = 2;
+        this.isAnimating = false;
+        
+        // Touch/mouse tracking
+        this.isDragging = false;
+        this.startX = 0;
+        this.currentX = 0;
+        this.initialTransform = 0;
+        this.threshold = 50; // Minimum swipe distance
+        
+        this.init();
+    }
+    
+    init() {
+        this.bindEvents();
+        this.updateSlide();
+        console.log('✅ Swipeable header navigation initialized');
+    }
+    
+    bindEvents() {
+        // Arrow button events
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        
+        // Indicator events
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Touch events
+        this.navTrack.addEventListener('touchstart', (e) => this.handleStart(e), { passive: false });
+        this.navTrack.addEventListener('touchmove', (e) => this.handleMove(e), { passive: false });
+        this.navTrack.addEventListener('touchend', (e) => this.handleEnd(e), { passive: false });
+        
+        // Mouse events (for desktop testing)
+        this.navTrack.addEventListener('mousedown', (e) => this.handleStart(e));
+        this.navTrack.addEventListener('mousemove', (e) => this.handleMove(e));
+        this.navTrack.addEventListener('mouseup', (e) => this.handleEnd(e));
+        this.navTrack.addEventListener('mouseleave', (e) => this.handleEnd(e));
+        
+        // Navigation link events
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                this.setActiveLink(link);
+                console.log(`Navigated to: ${link.textContent}`);
+            });
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prevSlide();
+            if (e.key === 'ArrowRight') this.nextSlide();
+        });
+    }
+    
+    handleStart(e) {
+        if (this.isAnimating) return;
+        
+        this.isDragging = true;
+        this.navTrack.classList.add('dragging');
+        
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        this.startX = clientX;
+        this.currentX = clientX;
+        
+        const transform = getComputedStyle(this.navTrack).transform;
+        this.initialTransform = transform === 'none' ? 0 : 
+            parseInt(transform.split(',')[4]) || 0;
+    }
+    
+    handleMove(e) {
+        if (!this.isDragging) return;
+        
+        e.preventDefault();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        this.currentX = clientX;
+        
+        const deltaX = this.currentX - this.startX;
+        const newTransform = this.initialTransform + deltaX;
+        
+        // Apply transform with boundaries
+        const maxTransform = 0;
+        const minTransform = -(this.totalSlides - 1) * 100;
+        const clampedTransform = Math.max(minTransform, Math.min(maxTransform, newTransform));
+        
+        this.navTrack.style.transform = `translateX(${clampedTransform}%)`;
+    }
+    
+    handleEnd(e) {
+        if (!this.isDragging) return;
+        
+        this.isDragging = false;
+        this.navTrack.classList.remove('dragging');
+        
+        const deltaX = this.currentX - this.startX;
+        const threshold = this.threshold;
+        
+        if (Math.abs(deltaX) > threshold) {
+            if (deltaX > 0 && this.currentSlide > 0) {
+                this.prevSlide();
+            } else if (deltaX < 0 && this.currentSlide < this.totalSlides - 1) {
+                this.nextSlide();
+            } else {
+                this.updateSlide(); // Snap back
+            }
+        } else {
+            this.updateSlide(); // Snap back
+        }
+    }
+    
+    prevSlide() {
+        if (this.isAnimating || this.currentSlide <= 0) return;
+        this.currentSlide--;
+        this.updateSlide();
+    }
+    
+    nextSlide() {
+        if (this.isAnimating || this.currentSlide >= this.totalSlides - 1) return;
+        this.currentSlide++;
+        this.updateSlide();
+    }
+    
+    goToSlide(index) {
+        if (this.isAnimating || index === this.currentSlide) return;
+        this.currentSlide = index;
+        this.updateSlide();
+    }
+    
+    updateSlide() {
+        this.isAnimating = true;
+        
+        // Update transform
+        const translateX = -this.currentSlide * 100;
+        this.navTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update indicators
+        this.indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === this.currentSlide);
+        });
+        
+        // Update arrow visibility
+        this.prevBtn.style.opacity = this.currentSlide > 0 ? '1' : '0.5';
+        this.nextBtn.style.opacity = this.currentSlide < this.totalSlides - 1 ? '1' : '0.5';
+        
+        // Reset animation lock after transition
+        setTimeout(() => {
+            this.isAnimating = false;
+        }, 300);
+        
+        console.log(`Navigated to slide: ${this.currentSlide + 1}`);
+    }
+    
+    setActiveLink(activeLink) {
+        this.navLinks.forEach(link => link.classList.remove('active'));
+        activeLink.classList.add('active');
+    }
+}
+
+// Initialize swipeable header when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing code remains here...
+    
+    // Initialize EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("T_tQAZWQAg3YZzTie");
+        console.log('📧 EmailJS Initialized');
+    } else {
+        console.warn('📧 EmailJS not loaded - form will use mailto fallback');
+    }
+
+    // Initialize existing functions
+    initializeGallery();
+    initializeContactForm();
+    initializeSmoothScrolling();
+    
+    // Initialize new swipeable header
+    new SwipeableHeader();
+    
+    console.log('✅ All JavaScript modules loaded successfully');
+});
+
+// Keep all your existing functions below...
+// (initializeGallery, initializeContactForm, initializeSmoothScrolling, etc.)
+// Just add the SwipeableHeader initialization above
+
 // Initialize EmailJS when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS with your public key
@@ -19,9 +216,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // SMOOTH SCROLLING
     initializeSmoothScrolling();
-    
-    // MOBILE MENU FUNCTIONALITY
-    initializeMobileMenu();
     
     console.log('✅ All JavaScript modules loaded successfully');
 });
@@ -182,7 +376,7 @@ function sendViaEmailJS(data, submitBtn, originalBtnText, form) {
     console.log('📧 Sending email with template params:', templateParams);
     
     // Replace these with your actual EmailJS service and template IDs
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+    emailjs.send('service_9num3id', 'template_hi56aao', templateParams)
         .then(function(response) {
             console.log('✅ EmailJS SUCCESS:', response.status, response.text);
             alert('🎉 Thank you! Your quote request has been sent successfully. We will contact you within 24 hours.');
@@ -238,7 +432,7 @@ Sent from: Bhagwati Logistics Website
 Date: ${new Date().toLocaleString('en-IN')}
     `.trim());
     
-    const mailtoLink = `mailto:bhagwatilogistics02@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    const mailtoLink = `mailto:avtardy08@gmail.com?subject=${emailSubject}&body=${emailBody}`;
     
     // Open email client
     window.open(mailtoLink, '_blank');
@@ -368,3 +562,4 @@ window.debugForm = debugForm;
 
 console.log('🎉 Bhagwati Logistics JavaScript fully loaded!');
 console.log('💡 Use debugGallery() or debugForm() in console to troubleshoot');
+
