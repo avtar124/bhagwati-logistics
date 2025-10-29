@@ -70,6 +70,10 @@ header {
     font-size: 24px;
     font-weight: bold;
 }
+.logo-icon-img {
+    height: 55px;
+    width: auto;
+}
 
 .logo-text h1 {
     color: #1e3a8a;
@@ -2033,3 +2037,4 @@ html {
 }
 
 /* END OF COMPLETE CSS FILE */
+
